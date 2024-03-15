@@ -6,7 +6,7 @@ from telethon.tl.custom import Button
 
 openai.api_key = config.openai_key
 
-client = TelegramClient(config.session_name_bot, config.API_ID, config.API_HASH, bot_token=config.BOT_TOKEN)
+client = TelegramClient(config.session_name_bot, config.API_ID, config.API_HASH).start(bot_token=config.BOT_TOKEN)
 
 keyboard_stop = [[Button.inline("Зупинити розмову", b"stop")]]
 
