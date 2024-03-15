@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  chatgpt_telegram_bot:
+    container_name: chatgpt_telegram_bot
+    command: python3 telegram-bot-main.py
+    restart: always
+    build:
+      context: "."
+      dockerfile: Dockerfile
+    environment:
+      SESSION_NAME_BOT: ${SESSION_NAME_BOT}
+      API_ID: ${API_ID}
+      API_HASH: ${API_HASH}
+      BOT_TOKEN: ${BOT_TOKEN}
+      MODEL_ENGINE: ${MODEL_ENGINE}
+      OPENAI_KEY: ${OPENAI_KEY}
